@@ -1,0 +1,92 @@
+react native mobilde kullanılır.
+javascriptte const keywordü atanınca sonradan değiştirilemez.
+
+Arrow function;
+function topla(a,b) {
+        return a + b
+}
+
+
+const topla2 = (a,b)  => a+b
+
+
+console.log(topla2(10,20))
+
+2. örnek =>
+
+const numbers= [1,2,3,4,5];
+
+const kareler1 = numbers.map(function(number) {
+       return number*number
+})
+
+const kareler2= numbers.map(number => number * number);
+
+console.log(kareler2)
+
+*visual studioda shift alt f kodları düzeltir
+
+JSX=> javascript ve html kodlarının birleştirildiği bir yapıdır. reactte componentlerin tanımlanmasında kullanılır ve içeriğini belirtir. javascript kodunu html gibi görünen bir şey olarak yazmayı sağlar.
+
+DOSYA YAPISI
+
+react projesi oluşturmak için terminalden => npx create-react-app .
+                                             npm start
+
+package.json=> bilgilerimizi içeriyor.içinde npm geliştirme paketleri var
+node modules  =>  git github içine atılmaz çünkü production kısmında buna gerek yok bunu tekrar indireceğiz. npm install ile sildikten sonra tekrar yükleyebiliyoruz.
+
+package-lock.json => projede paketler yüklenirkenki loglar bulunuyor.
+
+.git ignore => github tarafına atılmayanlar. kaydedilmeyenler.
+
+src => projenin çalışma alanındaki dosyaları içerir.
+       burada çalışacağız genelde.
+       uygulamanın işlevselliğini tanımlar.
+       React componentlerini içeren javascript ve css dosyaları
+       genel olarak uygulamanın içeriğini tanımlayan işlevselliğini tanımlayan react componentlerini içeriyor.
+
+**App.test.js  reportWebVital.js  setupTest.js  yi şimdilik sildik.
+
+index.js => react uygulamasının ana dosyası, uygulamanın çalışması sağlanıyor. React dom u render etme işlemleri yapılıyor ve react componentlerini ekrana yansıtıyoruz. ReactDOM import ediliyor bu dosya içinde ReactDOM react componentlerini DOM elementlerine dönüştürür. Genel olarak React i kurduğumuz dosyadır. İçinden ana html dosyasına ulaşılır. içerisine app ile ana componentimi çağırıyorum.
+
+**tüm sayfalar index.html içinden olur. buna SPA denir.
+
+App.js => tüm componentleri topladığımız ana componentimiz.  react component bazlıdır. ilk componentimiz app componenti. bu dosya içine function App içine javascript kodları yazmak yerine direk return un içine htmller içine yazabiliriz.
+
+public klasörü => uygulamanın görünür kısmında bulunan ve sunucuda dağıtılan dosyaları içerir. 
+                 index.html => bu dosya uygulamanın başlangıç noktasıdır.
+                 statik olarak gelen dosyalar bu klasörün içinde.
+
+** component aslında fonksiyon
+
+20.54 - 21.54
+
+**react'ta stillendirme yapılırken div içine className yazılır. 
+**componentler iç içe yazılabilir.
+
+**props ile componentler arası veri aktarılır ve bu veriler kolayca kullanılır. parenttan child a props gönderilir.
+
+-------
+
+üstüne kod yazıyorsam return ü eklerim tek bir yapı ise kod eklemiyorsam return ü eklemem.
+
+ <div className="products">
+        {productData.map((product) => (
+          <ProductItem key={product.productName} product={product} />
+        ))}
+      </div>
+
+---------
+
+<div className="products">
+        {productData.map((product) => {
+          const a=4;
+          return <ProductItem key={product.productName} product={product} />
+        })}
+      </div>
+
+
+
+
+
