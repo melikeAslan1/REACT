@@ -60,7 +60,6 @@ public klasörü => uygulamanın görünür kısmında bulunan ve sunucuda dağ�
 
 ** component aslında fonksiyon
 
-20.54 - 21.54
 
 **react'ta stillendirme yapılırken div içine className yazılır. 
 **componentler iç içe yazılabilir.
@@ -87,6 +86,29 @@ public klasörü => uygulamanın görünür kısmında bulunan ve sunucuda dağ�
       </div>
 
 
+-------
+bir projeyi indirdiğinde çalıştırmadan önce npm start de.
 
+
+
+
+
+
+function App() {
+  return (
+    <ProductProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<ProductsPage />} />
+          <Route path="/add" element={<AddProductPage />} />
+          <Route path="/product/:id" element={<ProductDetailPage />} />
+        </Routes>
+      </BrowserRouter>
+    </ProductProvider>
+  );
+}
+
+export default App;
 
 
